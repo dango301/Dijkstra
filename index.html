@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dijkstra Live Computation</title>
+  <link rel="icon" href="./assets/icon.svg">
+  <script src="./scripts/dist/main.js"></script>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Bungee+Outline|Bungee+Shade|Courgette"
+    rel="stylesheet">
+</head>
+
+<body
+  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;"
+  unselectable="on">
+
+  <header>
+
+    <h1>
+      The 'Dijkstra'-Algorithm
+      <br>
+      <span>➳ Live Computation</span>
+    </h1>
+
+    <div id="controls">
+      <!--TODO: tryout zooming window https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/tabs/setZoom -->
+      <button id="compute">Find shortest Route!</button>
+        <button id="step" class="inactive">Next Step</button>
+        <button id="end" class="inactive">Skip to Result</button>
+    </div>
+
+  </header>
+
+  <p id="instructions">
+    Create Nodes: Drag using any mouse button
+    <br>
+    Move Nodes: Drag using left mouse button
+    <br>
+    Link Nodes: Drag using right mouse button
+    <br>
+    Delete Nodes & Verteces: Press scroll button
+  </p>
+
+</body>
+
+</html>
