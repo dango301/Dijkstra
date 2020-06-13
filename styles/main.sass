@@ -22,18 +22,21 @@ header
   h1
     display: inline-block
     position: relative
-    font-family: 'Bungee Shade'
+    font-family: 'Bungee Outline'
     line-height: 40px
     font-size: 30px
     margin: 0
     z-index: 6
     width: fit-content
+    left: 15px
+    font-style: italic
     
     span
       position: relative
-      left: 10px
-      font-style: italic
-      font-family: 'Bungee Outline'
+      font-family: 'Bungee Shade'
+      left: -15px
+      cursor: pointer
+      transition: color .33s ease-in-out
 
   #controls
     display: flex
@@ -88,6 +91,16 @@ p#instructions
   font-family: Montserrat
   font-style: italic
   font-size: 13px
+a
+  position: absolute
+  right: 0
+  bottom: 0
+  font-size: inherit
+  font-family: inherit
+  color: inherit
+  font-style: italic
+  font-weight: 600
+  text-decoration: none
 
 .node //TODO: add constant pulsating animation similar to hover effect
   position: absolute

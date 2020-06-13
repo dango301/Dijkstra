@@ -34,7 +34,7 @@ header {
 header h1 {
   display: inline-block;
   position: relative;
-  font-family: 'Bungee Shade';
+  font-family: 'Bungee Outline';
   line-height: 40px;
   font-size: 30px;
   margin: 0;
@@ -42,13 +42,17 @@ header h1 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  left: 15px;
+  font-style: italic;
 }
 
 header h1 span {
   position: relative;
-  left: 10px;
-  font-style: italic;
-  font-family: 'Bungee Outline';
+  font-family: 'Bungee Shade';
+  left: -15px;
+  cursor: pointer;
+  -webkit-transition: color .33s ease-in-out;
+  transition: color .33s ease-in-out;
 }
 
 header #controls {
@@ -115,6 +119,18 @@ p#instructions {
   font-family: Montserrat;
   font-style: italic;
   font-size: 13px;
+}
+
+a {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  font-style: italic;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .node {
