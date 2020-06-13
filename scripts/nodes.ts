@@ -17,6 +17,7 @@ var
     '#ff595e',
 
   ],
+  colorPick = () => colors[Math.floor(Math.random() * colors.length)],
   calcDist = (ox: number, oy: number, x2: number, y2: number) => Math.hypot(x2 - ox, y2 - oy),
   contained = (dist: number) => 25 < dist && dist < 125
 
@@ -38,7 +39,7 @@ function createNode(x: number, y: number) {
   node.classList.add('node')
   node.appendChild(title)
 
-  node.style.background = colors[Math.floor(Math.random() * colors.length)]
+  node.style.background = colorPick()
   node.style.left = `${x}px`
   node.style.top = `${y}px`
 
@@ -92,6 +93,7 @@ export {
   createNode,
   scaleNode,
   moveNode,
+  colorPick,
   calcDist,
   contained
 }

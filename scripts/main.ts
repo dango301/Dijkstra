@@ -1,4 +1,4 @@
-import { createNode, scaleNode, calcDist, contained, moveNode } from './nodes'
+import { createNode, scaleNode, colorPick, calcDist, contained, moveNode } from './nodes'
 import { createVertex, moveVertex, endVertex } from './vertices'
 import { dijkstra, nextStep } from './dijkstra'
 import { _Node, Vertex } from './classes'
@@ -23,6 +23,11 @@ window.onload = () => {
   skipButton.addEventListener('click', () => { while (nextStep()); })
   dijkstraButton.addEventListener('click', () => toggleDijkstra(!computing))
 
+  let title = <HTMLElement>document.querySelector('h1 span')
+  title.addEventListener('mouseover', () => title.style.color = colorPick())
+  title.addEventListener('mouseout', () => title.style.color = 'white')
+  title.addEventListener('click', () => window.open("https://github.com/dango301/Dijkstra", '_blank'))
+  
   console.log("Welcome 🌟🌟🌟")
 }
 
