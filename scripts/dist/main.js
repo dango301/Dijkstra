@@ -419,6 +419,9 @@ var vertices_1 = require("./vertices");
 var classes_1 = require("./classes");
 
 var colors = ['#8B61AA', '#D295BF', '#FB976F', '#dc6d6d', '#FF9B42', '#007AAF', '#2C5CC3', '#e63946', '#2a9d8f', '#26A57B', '#ff006e', '#ff595e'],
+    colorPick = function colorPick() {
+  return colors[Math.floor(Math.random() * colors.length)];
+},
     calcDist = function calcDist(ox, oy, x2, y2) {
   return Math.hypot(x2 - ox, y2 - oy);
 },
@@ -426,6 +429,7 @@ var colors = ['#8B61AA', '#D295BF', '#FB976F', '#dc6d6d', '#FF9B42', '#007AAF', 
   return 25 < dist && dist < 125;
 };
 
+exports.colorPick = colorPick;
 exports.calcDist = calcDist;
 exports.contained = contained;
 
@@ -441,7 +445,7 @@ function createNode(x, y) {
   title.classList.add('title');
   node.classList.add('node');
   node.appendChild(title);
-  node.style.background = colors[Math.floor(Math.random() * colors.length)];
+  node.style.background = colorPick();
   node.style.left = x + "px";
   node.style.top = y + "px";
   document.body.appendChild(node);
@@ -686,6 +690,16 @@ window.onload = function () {
   dijkstraButton.addEventListener('click', function () {
     return toggleDijkstra(!computing);
   });
+  var title = document.querySelector('h1 span');
+  title.addEventListener('mouseover', function () {
+    return title.style.color = nodes_1.colorPick();
+  });
+  title.addEventListener('mouseout', function () {
+    return title.style.color = 'white';
+  });
+  title.addEventListener('click', function () {
+    return window.open("https://github.com/dango301/Dijkstra", '_blank');
+  });
   console.log("Welcome 🌟🌟🌟");
 };
 
@@ -927,7 +941,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56013" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52886" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
